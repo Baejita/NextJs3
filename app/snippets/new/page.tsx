@@ -4,7 +4,7 @@ import React from 'react'
 
 function snippetCreatePage() {
     async function createSnippet(formdata:FormData) {
-        //จำเป็นเรียกใช้ server actions
+        //จำเป็นเรียกใช้ server actions ต้องใช้เยอะๆเพราะจะทำให้แอปรวดเร็วขึ้นได้
         "use server"
         // ตรวจสอบว่า ผู้ใช้ กรอกข้อมูล ถูกต้อง
         const title = formdata.get('title' as string);
