@@ -2,7 +2,8 @@
 
 import { useFormState } from "react-dom"
 import * as actions from '../../actions'
-function snippetCreatePage() {
+
+function SnippetCreatePage() {
   const [formState, action] = useFormState(actions.createSnippet, {message: ''})
     
   return (
@@ -29,4 +30,4 @@ function snippetCreatePage() {
   )
 }
 
-export default snippetCreatePage
+export default SnippetCreatePage
