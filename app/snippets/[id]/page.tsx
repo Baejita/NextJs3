@@ -41,3 +41,13 @@ async function  showSnippetId(props: SnippetShowpageProps) {
 }
 
 export default showSnippetId
+
+//การใส่ตรงนี้ทำให้ cach ข้อมุลไว้ก่อน แต่ถ้า run dev ในโหมดพัฒนาจะยังเจอะ โหลดดิ่งอยู่ แต่ถ้า npm run start จะไม่มีการโหลดเลยเพราะโหลดมาให้ก่อนแล้ว
+export async function generateStaticParams() {
+    const snippets = await db.snippet.findMany()
+    return snippets.map((snippet)=> {
+        return {
+            id: snippet.id.toString()
+        }
+    })
+}
